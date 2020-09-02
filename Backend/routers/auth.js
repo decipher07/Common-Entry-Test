@@ -17,7 +17,7 @@ router.get(
 router.get("/auth/google/redirect", passport.authenticate('google'),(req, res, next) => {
 	user = req.user
 	//res.send(user)
-	res.redirect(303, "http://127.0.0.1:5500/Frontend/index.html");
+	res.redirect(303, "http://127.0.0.1:5500/Frontend/index.html/?token="+ user.token +"&_id"+user._id);
 });
 
 module.exports = router;
